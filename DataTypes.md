@@ -88,3 +88,18 @@ The following image shows some more examples of implicit type conversions.
 ![image](https://github.com/user-attachments/assets/db5fdbd1-5277-4852-949b-5b091066300f)
 
 
+Observation 1:
+
+```abap
+    DATA number1 TYPE i VALUE -8.
+    DATA number2 TYPE i VALUE 3.
+
+    DATA(result) = number1 / number2.
+    DATA(output) = |{ number1 } / { number2 } = { result }|. " -8 / 3 = -3
+
+    DATA result1 TYPE p LENGTH 8 DECIMALS 2.
+    result1 = number1 / number2.
+    DATA(output1) = |{ number1 } / { number2 } = { result1 }|. " -8 / 3 = -2.67
+```
+Based on receiving type, the result changes.
+
