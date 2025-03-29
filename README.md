@@ -15,3 +15,8 @@ Built-in Types
    <img width="340" alt="ABAP Strings" src="https://github.com/user-attachments/assets/c8f5c376-1010-4938-b355-90c958ac1b2c" />
 
 When a string is placed in single quotes, it is considered as character literals. In the case of lv_str1, auto-conversion happened from character literals to string.
+
+The following image shows some more examples of implicit type conversions.
+
+![image](https://github.com/user-attachments/assets/db5fdbd1-5277-4852-949b-5b091066300f)
+
