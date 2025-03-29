@@ -1,4 +1,6 @@
-# ABAP Built-in Types
+# ABAP Data Types
+
+## ABAP Built-in Types
 | Built-in TYpe | Category          |
 |---------------|-------------------|
 | b             | Integer           |
@@ -17,45 +19,45 @@
 | string        | Text String       |
 | xstring       | Byte String       |
 
-Dictionary Data Type
-|Data Type	   | Short Description	                                   | Equivalent ABAP Built-In Type |
-|-----------   |--------------------------------------                 |-------------------------------|
-|CURR	         |Currency Field in BCD Format	                          | P((n+1)/2)                    |
-|DEC	         |Packed Number in BCD Format	                          |P((n+1)/2)                     |
-|QUAN          |Quantity Field in BCD Format	                          |P((n+1)/2)                     |
-|CHAR	         |Character String	                                      |C(n)                           |
-|CUKY	         |Currency key for currency fields	                    |C(5)                           |
-|LANG	         |Language key	                                         |C(1)                           |
-|LCHR	         |Long Character String	                                |C(n)                           |
-| UNIT        | Unit key of a quantity field                           | C(n)        |
-| INT1        | 1-Byte Integer, 0 to 255                               | Internal only |
-| INT2        | 2-byte integer, -32768 to 32767                        | Internal only |
-| INT4        | 4-byte integer, -2147483648 to +2147483647             | I            |
-| INT8        | 8-Byte Integer                                         |              |
-| FLTP        | Floating Point Number                                  | F(8)        |
-| NUMC        | Numerical Text                                         | N(n)        |
-| LRAW        | Long Byte String                                       | X(n)        |
-| RAW         | Byte Sequence                                          | X(n)        |
-| RAWSTRING   | Byte String (BLOB)                                     | XSTRING     |
-| SSTRING     | Character String                                       |              |
-| STRING      | Character String (CLOB)                                | STRING      |
-| DATS        | Date in Format YYYYMMDD                                | D           |
-| TIMS        | Time in Format HHMMSS                                  | T           |
-| DECFLOAT16  | Floating point number (native HANA type SMALLDECIMAL)  |              |
-| DECFLOAT34  | Floating point number (native HANA type DECIMAL)       |              |
-| DATN        | Date in format YYYYMMDD (native HANA type DATE)        |              |
-| TIMN        | Time in format HHMMSS (native HANA type TIME)          |              |
-| UTCLONG     | Time stamp (native HANA type TIMESTAMP)                |              |
-| ACCP        | Posting Period YYYYMM                                  | N(6)        |
-| CLNT        | Client                                                 | C(3)        |
-| DF16_DEC    | Decimal floating point number saved in BCD format      |              |
-| DF16_RAW    | Decimal floating point number saved as binary number   |              |
-| DF16_SCL    | Decimal floating point number with scaling (obsolete)  |              |
-| DF34_DEC    | Decimal floating point number saved in BCD format      |              |
-| DF34_RAW    | Decimal floating point number saved as binary number   |              |
-| DF34_SCL    | Decimal floating point number with scaling (obsolete)  |              |
-| GEOM_EWKB   | Geometry (EWKB representation)                         |              |
-| PREC        | Obsolete Data Type                                     | Internal only |
+## Dictionary Data Type
+### ABAP Built-in Types and Corresponding Dictionary Data Types
+
+| ABAP Built-in Type | Category                  | Corresponding ABAP Dictionary Data Type | Description |
+|--------------------|--------------------------|-----------------------------------------|-------------|
+| b                 | Integer                   | INT1                                    | 1-Byte Integer (0 to 255) |
+| s                 | Integer                   | INT2                                    | 2-Byte Integer (-32,768 to 32,767) |
+| i                 | Integer                   | INT4                                    | 4-Byte Integer (-2,147,483,648 to 2,147,483,647) |
+| int8              | Integer                   | INT8                                    | 8-Byte Integer |
+| Decfloat16        | Floating Point Number     | DECFLOAT16                              | Floating Point Number (HANA SMALLDECIMAL) |
+| Decfloat34        | Floating Point Number     | DECFLOAT34                              | Floating Point Number (HANA DECIMAL) |
+| f                 | Binary Floating Point Num | FLTP                                    | Floating Point Number (8 Bytes) |
+| p                 | Packed Numbers            | DEC, CURR, QUAN                         | Packed Number in BCD Format |
+| c                 | Character-like Type       | CHAR                                    | Character String |
+| n                 | Numeric Text Fields       | NUMC                                    | Numerical Text |
+| x                 | Byte-like Type            | RAW, LRAW                               | Byte Sequence / Long Byte String |
+| d                 | Date and Time Type        | DATS                                    | Date in Format YYYYMMDD |
+| t                 | Date and Time Type        | TIMS                                    | Time in Format HHMMSS |
+| string            | Text String               | STRING, SSTRING                         | Character String (CLOB) |
+| xstring           | Byte String               | RAWSTRING                               | Byte String (BLOB) |
+
+### Additional ABAP Dictionary Types
+
+| ABAP Dictionary Data Type | Short Description                      | ABAP Type |
+|---------------------------|----------------------------------------|-----------|
+| CUKY                      | Currency Key                           | C(5)      |
+| CURR                      | Currency Field in BCD Format          | P((n+1)/2) |
+| LANG                      | Language Key                           | C(1)      |
+| LCHR                      | Long Character String                  | C(n)      |
+| ACCP                      | Posting Period YYYYMM                 | N(6)      |
+| CLNT                      | Client                                 | C(3)      |
+| DF16_DEC                  | Decimal Floating Point (BCD Format)   | -         |
+| DF16_RAW                  | Decimal Floating Point (Binary)       | -         |
+| DF16_SCL                  | Decimal Floating Point (Obsolete)     | -         |
+| DF34_DEC                  | Decimal Floating Point (BCD Format)   | -         |
+| DF34_RAW                  | Decimal Floating Point (Binary)       | -         |
+| DF34_SCL                  | Decimal Floating Point (Obsolete)     | -         |
+| GEOM_EWKB                 | Geometry (EWKB Representation)        | -         |
+| PREC                      | Obsolete Data Type                    | Internal only |
 
 
 - Number Literals are integer numbers with or without sign. Number literals usually have data type I. Only if the value is too large for data type I, type P is used, with a sufficient length and without decimal places.
