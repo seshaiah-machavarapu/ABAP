@@ -1,10 +1,26 @@
-# ABAP
-Built-in Types
+# ABAP Built-in Types
+| Built-in TYpe | Category          |
+|---------------|-------------------|
+| b             | Integer           |
+| s             | Integer           |
+| i             | Integer           |
+| int8          | Integer           |
+| Decfloat16    | Floating Point Number|
+| Decfloat34    | Floating Point Number|
+| f             | Binary Floating Point Num|
+| p             | Packed Number     |
+| c             | Character-like    |
+| n             | Character-like (Numeric)|
+| x             | Byte-like         |
+| d             | Date              |
+| t             | Time              |
+| string        | Text String       |
+| xstring       | Byte String       |
 
 - Number Literals are integer numbers with or without sign. Number literals usually have data type I. Only if the value is too large for data type I, type P is used, with a sufficient length and without decimal places.
 - Text Literals are character strings in simple quotes. Text literals have type C. The length is derived from the content in quotes. Trailing blanks are ignored.
 - String Literals are character strings in a pair of back quotes (`). String literals are of type STRING. They should be used to provide values for string typed data objects.
-- 
+
 ```abap
    " Is this Okay to use single quote instead of back quote for a string?
    DATA lv_str1 TYPE string VALUE 'This is a string'.
